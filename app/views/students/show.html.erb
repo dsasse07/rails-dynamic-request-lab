@@ -1,0 +1,11 @@
+ it 'renders the first name in a h1 tag' do
+    visit "students/#{@student.id}"
+    expect(page).to have_css("h1", text: "Daenerys")
+  end
+
+  it 'renders the last name in a h1 tag' do
+    visit "students/#{@student.id}"
+    expect(page).to have_css("h1", text: "Targaryen")
+  end
+
+  <h1><%=@student.first_name + " " + @student.last_name%></h1>
